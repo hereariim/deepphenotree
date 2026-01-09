@@ -1,0 +1,50 @@
+name: deepphenotree
+display_name: DeepPhenoTree
+# use 'hidden' to remove plugin from napari hub search results
+visibility: public
+# see https://napari.org/stable/plugins/technical_references/manifest.html#fields for valid categories
+# categories: []
+contributions:
+  commands:
+    - id: deepphenotree.get_reader
+      python_name: deepphenotree._reader:napari_get_reader
+      title: Open data with DeepPhenoTree
+    - id: deepphenotree.make_sample_data
+      python_name: deepphenotree._sample_data:make_sample_data
+      title: Load sample data from DeepPhenoTree
+    - id: deepphenotree.make_container_widget
+      python_name: deepphenotree:ImageThreshold
+      title: Make threshold Container widget
+    - id: deepphenotree.make_magic_widget
+      python_name: deepphenotree:threshold_magic_widget
+      title: Make threshold magic widget
+    - id: deepphenotree.make_function_widget
+      python_name: deepphenotree:threshold_autogenerate_widget
+      title: Make threshold function widget
+    - id: deepphenotree.make_qwidget
+      python_name: deepphenotree:ExampleQWidget
+      title: Make example QWidget
+  readers:
+    - command: deepphenotree.get_reader
+      accepts_directories: false
+      filename_patterns: ['*.npy']
+  sample_data:
+    - command: deepphenotree.make_sample_data
+      display_name: DeepPhenoTree
+      key: unique_id.1
+  widgets:
+    - command: deepphenotree.make_container_widget
+      display_name: Container Threshold
+    - command: deepphenotree.make_magic_widget
+      display_name: Magic Threshold
+    - command: deepphenotree.make_function_widget
+      autogenerate: true
+      display_name: Autogenerate Threshold
+    - command: deepphenotree.make_qwidget
+      display_name: Example QWidget
+  menus:
+    napari/layers/segment:
+      - command: deepphenotree.make_container_widget
+      - command: deepphenotree.make_magic_widget
+      - command: deepphenotree.make_function_widget
+      - command: deepphenotree.make_qwidget

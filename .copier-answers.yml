@@ -1,0 +1,19 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v2.0.1
+_src_path: https://github.com/napari/napari-plugin-template
+display_name: DeepPhenoTree
+email: herearii.metuarea@gmail.com
+full_name: Herearii Metuareea
+github_repository_url: https://github.com/hereariim/deepphenotree
+github_username_or_organization: hereariim
+include_reader_plugin: true
+include_sample_data_plugin: true
+include_widget_plugin: true
+include_writer_plugin: false
+install_dependabot: true
+install_precommit: true
+license: GNU LGPL v3.0
+module_name: deepphenotree
+plugin_name: deepphenotree
+short_description: A simple plugin to use models developped for flowering, fruitlet
+    and fruit
