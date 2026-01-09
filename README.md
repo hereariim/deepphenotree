@@ -41,7 +41,7 @@ pip install git+https://github.com/hereariim/deepphenotree.git
 ```
 ## Getting started
 
-### Basic usage
+### Running from Python
 ```
 from deepphenotree.inference import YoloInferencer
 image = # Your RGB image
@@ -59,7 +59,13 @@ infer = YoloInferencer("Fruit")
 bbx = infer.predict_boxes(image)
 ```
 
-### Napari
+### Running from Napari
+
+This plugin is a tool to perform targeted image inference on user-provided images. Users can run three specific detection tasks via dedicated buttons: flowering, fruitlet, and fruit detection. The plugin returns the coordinates of bounding boxes around detected objects, and a message informs the user of the number of detected boxes. Several developments are ongoing—feel free to contact us if you have requests or suggestions.
+
+## Acknowlegments
+
+We would like to thank the following people for their contributions to the project: Herearii Metuarea, Walter Guerra,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau, Abdoul-Djalil Hamza Ousseinni, Francesca Zuffa, Francesco Panzeri, Lou Decastro, Jade MARHADOUR, Oumaima Karia
 
 ## Contact
 
