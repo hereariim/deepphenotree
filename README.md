@@ -15,7 +15,7 @@ Herearii Metuarea, Walter Guerra† ,  Andrea Patocchi, Lidia Lozano,  Shauny Va
 
 <img width="1920" height="165" alt="445202004-4a110408-5854-4e8c-b655-4cb588434b79" src="https://github.com/user-attachments/assets/094464d1-8ce8-474b-8473-4a14973cff47" />
 
-![alt text](<src/images/Screenshot from 2026-01-09 16-38-04.png>)
+![alt text](src/images/DeepPhenoTree.png)
 
 DeepPhenoTree is though as a tool to enable automatic detection of phenological stages associated with flowering, fruitlet, and fruit in harvest time from images using deep learning–based object detection models.
 
@@ -23,7 +23,7 @@ This [napari] plugin was generated with [copier] using the [napari-plugin-templa
 
 ### Contribution
 
-### Article
+### Article (Draft)
 
 *DeepPhenoTree – Apple Edition: a Multi-site apple phenology RGB annotated dataset with deep learning baseline models.*
 Herearii Metuarea, Walter Guerra,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau.
@@ -77,6 +77,56 @@ bbx = infer.predict_boxes(image)
 
 This plugin is a tool to perform targeted image inference on user-provided images. Users can run three specific detection tasks via dedicated buttons: flowering, fruitlet, and fruit detection. The plugin returns the coordinates of bounding boxes around detected objects, and a message informs the user of the number of detected boxes. Several developments are ongoing—feel free to contact us if you have requests or suggestions.
 
+![alt text](<src/images/Screenshot from 2026-01-09 16-38-04.png>)
+
+### Scheme
+
+![alt text](src/images/scheme.png)
+
+### Input
+
+User drag and drop RGB image on napari window.
+
+### Process
+
+User click to make inference in image : 
+- Flowering : Detect all objects (from BBCH 00 to BBCH 69) from bud developpement to flowering.
+- Fruitlet : Detect fruit in developement (from BBCH 71 to 77)
+- Fruit : Detect all fruit in harvest time (from BBCH 81 to 89)
+
+### Output
+
+Bounding box displayed in layer Flowering for flowering, Fruitlet for fruitlet and Fruit for fruit.
+
+## Model
+
+DeepPhenoTree consists of a RT-DETR trained on DeepPhenoTree dataset. 
+
+The trained models used in this project are **not publicly available**. They are part of ongoing research and collaborative projects, and therefore cannot be distributed at this time.  
+However, the codebase is provided to ensure **reproducibility** and **transparency** of the proposed methodology.
+
+### Images results
+
+**Metrics are reported as mean ± standard deviation across folds.**
+
+| Dataset   | Location      | Precision       | Recall          | mAP@0.5        | mAP@0.5:0.95   |
+|-----------|---------------|-----------------|-----------------|---------------|---------------|
+| Flowering | REFPOP        | 0.69 ± 0.01     | 0.58 ± 0.02     | 0.65 ± 0.02   | 0.37 ± 0.02   |
+|           | Switzerland   | 0.73 ± 0.02     | 0.60 ± 0.04     | 0.68 ± 0.03   | 0.40 ± 0.04   |
+|           | Belgium       | 0.72 ± 0.02     | 0.63 ± 0.03     | 0.69 ± 0.03   | 0.40 ± 0.03   |
+|           | Spain         | 0.66 ± 0.01     | 0.53 ± 0.05     | 0.60 ± 0.03   | 0.30 ± 0.02   |
+|           | Italy         | 0.69 ± 0.04     | 0.61 ± 0.03     | 0.67 ± 0.04   | 0.40 ± 0.04   |
+| Fruitlet  | REFPOP        | 0.85 ± 0.02     | 0.73 ± 0.02     | 0.82 ± 0.02   | 0.53 ± 0.01   |
+|           | Switzerland   | 0.86 ± 0.04     | 0.78 ± 0.04     | 0.84 ± 0.06   | 0.56 ± 0.04   |
+|           | Belgium       | 0.83 ± 0.03     | 0.65 ± 0.04     | 0.77 ± 0.04   | 0.52 ± 0.14   |
+|           | Spain         | 0.86 ± 0.02     | 0.72 ± 0.03     | 0.81 ± 0.03   | 0.52 ± 0.03   |
+|           | Italy         | 0.88 ± 0.01     | 0.80 ± 0.01     | 0.88 ± 0.01   | 0.61 ± 0.01   |
+
+## DeepPhenoTree Dataset
+
+DeepPhenoTree – Apple Edition, a multi-site, multi-variety,  RGB  image  dataset  dedicated  to  the  classification  of  key  apple  treephenological stages.
+
+<img width="1920" height="1080" alt="IRTA_time" src="https://github.com/user-attachments/assets/9eae80e6-73e1-45ad-b5e5-70a41807301b" />
 
 
 ## Acknowlegments
@@ -105,6 +155,14 @@ Distributed under the terms of the [GNU LGPL v3.0] license,
 ## Issues
 
 If you encounter any problems, please [file an issue] along with a detailed description.
+
+## Citing
+
+If you use DeepPhenoTree code or dataset in your research, please use the following BibTeX entry.
+
+```
+Not available
+```
 
 [napari]: https://github.com/napari/napari
 [copier]: https://copier.readthedocs.io/en/stable/
