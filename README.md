@@ -9,19 +9,16 @@
 [![npe2](https://img.shields.io/badge/plugin-npe2-blue?link=https://napari.org/stable/plugins/index.html)](https://napari.org/stable/plugins/index.html)
 [![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-purple.json)](https://github.com/copier-org/copier)
 
-A simple plugin to use models developped for flowering, fruitlet and fruit
-
-----------------------------------
+DeepPhenoTree is though as a tool to enable automatic detection of phenological stages associated with flowering, fruitlet, and fruit in harvest time from images using deep learning–based object detection models.
 
 This [napari] plugin was generated with [copier] using the [napari-plugin-template] (None).
 
-<!--
-Don't miss the full getting started guide to set up your new package:
-https://github.com/napari/napari-plugin-template#getting-started
+## Article
 
-and review the napari docs for plugin developers:
-https://napari.org/stable/plugins/index.html
--->
+*DeepPhenoTree – Apple Edition: a Multi-site apple phenology RGB annotated dataset with deep learning baseline models.*
+Herearii Metuarea, Walter Guerra,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau.
+
+----------------------------------
 
 ## Installation
 
@@ -37,14 +34,38 @@ If napari is not already installed, you can install `deepphenotree` with napari 
 pip install "deepphenotree[all]"
 ```
 
-
 To install latest development version :
 
 ```
 pip install git+https://github.com/hereariim/deepphenotree.git
 ```
+## Getting started
 
+### Basic usage
+```
+from deepphenotree.inference import YoloInferencer
+image = # Your RGB image
 
+# Flowering task
+infer = YoloInferencer("Flowering")
+bbx = infer.predict_boxes(image)
+
+# Fruitlet task
+infer = YoloInferencer("Fruitlet")
+bbx = infer.predict_boxes(image)
+
+# Fruit task
+infer = YoloInferencer("Fruit")
+bbx = infer.predict_boxes(image)
+```
+
+### Napari
+
+## Contact
+
+- Herearii Metuarea, PhD Student, Université d'Angers
+- Abdoul-Djalil Hamza Ousseini, Engineer, INRAe
+- David Rousseau, Full Professor, Université d'Angers
 
 ## Contributing
 

@@ -12,18 +12,9 @@ contributions:
     - id: deepphenotree.make_sample_data
       python_name: deepphenotree._sample_data:make_sample_data
       title: Load sample data from DeepPhenoTree
-    - id: deepphenotree.make_container_widget
-      python_name: deepphenotree:ImageThreshold
-      title: Make threshold Container widget
-    - id: deepphenotree.make_magic_widget
-      python_name: deepphenotree:threshold_magic_widget
-      title: Make threshold magic widget
-    - id: deepphenotree.make_function_widget
-      python_name: deepphenotree:threshold_autogenerate_widget
-      title: Make threshold function widget
-    - id: deepphenotree.make_qwidget
-      python_name: deepphenotree:ExampleQWidget
-      title: Make example QWidget
+    - id: deepphenotree.three_widget
+      python_name: deepphenotree:ThreeButtonsWidget
+      title: Three Buttons Widget
   readers:
     - command: deepphenotree.get_reader
       accepts_directories: false
@@ -33,15 +24,8 @@ contributions:
       display_name: DeepPhenoTree
       key: unique_id.1
   widgets:
-    - command: deepphenotree.make_container_widget
-      display_name: Container Threshold
-    - command: deepphenotree.make_magic_widget
-      display_name: Magic Threshold
-    - command: deepphenotree.make_function_widget
-      autogenerate: true
-      display_name: Autogenerate Threshold
-    - command: deepphenotree.make_qwidget
-      display_name: Example QWidget
+    - command: deepphenotree.three_widget
+      display_name: DeepPhenoTree
   menus:
     napari/layers/segment:
       - command: deepphenotree.make_container_widget
