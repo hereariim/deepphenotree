@@ -1,6 +1,13 @@
 import numpy as np
-from ultralytics import YOLO
+from ultralytics import RTDETR, YOLO
+from sahi.models.ultralytics import UltralyticsDetectionModel
+from sahi.predict import get_sliced_prediction
+import torch
+from pathlib import Path
 
+MODEL_Flowering = Path.home() / "deepphenotree" / "src" / "models" / "Flowering" / "best.pt"
+MODEL_Fruitlet = Path.home() / "deepphenotree" / "src" / "models" / "Fruitlet" / "best.pt"
+MODEL_Fruit = Path.home() / "deepphenotree" / "src" / "models" / "Fruit" / "best.pt"
 
 class YoloInferencer:
     def __init__(self, task: str):
@@ -18,19 +25,42 @@ class YoloInferencer:
 
     def predict_boxes(self, image: np.ndarray) -> np.ndarray:
         """Retourne des rectangles pour napari Shapes layer"""
+        device = "cuda:0" if torch.cuda.is_available() else "cpu"
         image = self.preprocess(image)
-        if self.task == "Flowering" or self.task == "Fruitlet":
-            self_model = YOLO("yolov8n.pt")
+        if self.task == "Flowering":
+            self_model = UltralyticsDetectionModel(
+                model_path=str(MODEL_Flowering),
+                confidence_threshold=0.529,
+                device=device
+            )
+        elif self.task == "Fruitlet":
+            self_model = UltralyticsDetectionModel(
+                model_path=str(MODEL_Fruitlet),
+                confidence_threshold=0.539,
+                device=device
+            )
         else:
-            self_model = YOLO("yolov8n.pt")  # Default model
-        results = self_model(image, verbose=False)[0]
+            self_model = UltralyticsDetectionModel(
+                model_path=str(MODEL_Fruitlet),
+                confidence_threshold=0.539,
+                device=device
+            )
+    
+        results = get_sliced_prediction(
+            image,
+            self_model,
+            slice_height=640,
+            slice_width=640,
+            overlap_height_ratio=0.2,
+            overlap_width_ratio=0.2,
+        )
 
-        if results.boxes is None or len(results.boxes) == 0:
+        if results.object_prediction_list is None or len(results.object_prediction_list) == 0:
             return np.empty((0, 4, 2))
 
-        boxes_xyxy = results.boxes.xyxy.cpu().numpy()
         rectangles = []
-        for x1, y1, x2, y2 in boxes_xyxy:
+        for pred in results.object_prediction_list:
+            x1, y1, x2, y2 = pred.bbox.to_xyxy()
             rectangles.append(
                 [
                     [y1, x1],  # top-left
@@ -39,4 +69,5 @@ class YoloInferencer:
                     [y2, x1],  # bottom-left
                 ]
             )
+
         return np.array(rectangles)

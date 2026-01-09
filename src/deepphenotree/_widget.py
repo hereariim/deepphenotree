@@ -74,7 +74,7 @@ class ThreeButtonsWidget(QWidget):
         # 1️⃣ Récupérer le layer image actif
         image_layer = self.viewer.layers.selection.active
         if image_layer is None or image_layer.__class__.__name__ != "Image":
-            notifications.show_info("Sélectionne un layer Image")
+            notifications.show_info("Select layer Image")
             return
 
         # 2️⃣ Récupérer les rectangles du modèle choisi
@@ -94,5 +94,5 @@ class ThreeButtonsWidget(QWidget):
             )
 
         notifications.show_info(
-            f"{len(rectangles)} boîtes détectées par {layer_name}"
+            f"{len(rectangles)} objects detected in {layer_name}"
         )
