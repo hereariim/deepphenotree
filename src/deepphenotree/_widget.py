@@ -39,6 +39,30 @@ from .inference import YoloInferencer
 if TYPE_CHECKING:
     import napari
 
+from pathlib import Path
+import subprocess
+import sys
+import os
+
+homedir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+dossier = Path(os.path.join(homedir,"models"))
+script = Path(os.path.join(homedir,"deepphenotree","models.py"))                    # <- à adapter si besoin
+
+# Cas où un fichier existe avec le même nom (ce n'est pas un dossier)
+if dossier.exists() and not dossier.is_dir():
+    raise RuntimeError(f"'{dossier}' existe mais ce n'est pas un dossier.")
+
+# Si le dossier n'existe pas, on lance moi.py
+if not dossier.is_dir():
+    if not script.is_file():
+        raise FileNotFoundError(f"Script introuvable : {script}")
+
+    # Lance moi.py avec le même interpréteur Python que le programme courant
+    result = subprocess.run([sys.executable, str(script)], check=False)
+
+    # Optionnel : arrêter le programme si moi.py échoue
+    if result.returncode != 0:
+        raise SystemExit(result.returncode)
 
 class ThreeButtonsWidget(QWidget):
     def __init__(self, viewer: "napari.viewer.Viewer"):

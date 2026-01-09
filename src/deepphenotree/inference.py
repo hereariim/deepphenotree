@@ -41,8 +41,8 @@ class YoloInferencer:
             )
         else:
             self_model = UltralyticsDetectionModel(
-                model_path=str(MODEL_Fruitlet),
-                confidence_threshold=0.539,
+                model_path=str(MODEL_Fruit),
+                confidence_threshold=0.594,
                 device=device
             )
     
@@ -51,8 +51,8 @@ class YoloInferencer:
             self_model,
             slice_height=640,
             slice_width=640,
-            overlap_height_ratio=0.2,
-            overlap_width_ratio=0.2,
+            overlap_height_ratio=0.4,
+            overlap_width_ratio=0.4,
         )
 
         if results.object_prediction_list is None or len(results.object_prediction_list) == 0:
