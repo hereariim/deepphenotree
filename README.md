@@ -67,7 +67,7 @@ This plugin is a tool to perform targeted image inference on user-provided image
 
 ## Acknowlegments
 
-We would like to thank the following people for their contributions to the project: Herearii Metuarea, Walter Guerra,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau, Abdoul-Djalil Hamza Ousseinni, Francesca Zuffa, Francesco Panzeri, Lou Decastro, Jade MARHADOUR, Oumaima Karia
+We would like to thank the following people for their contributions to the project: Herearii Metuarea, Walter Guerra,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau, Abdoul-Djalil Hamza Ousseinni, Francesca Zuffa, Francesco Panzeri, Lou Decastro, Jade MARHADOUR, Oumaima Karia, Lorène MASSON, Marie Kourkoumelis-Rodostamos.
 
 ## Contact
 
