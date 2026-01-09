@@ -15,7 +15,8 @@ Herearii Metuarea, Walter Guerra† ,  Andrea Patocchi, Lidia Lozano,  Shauny Va
 
 <img width="1920" height="165" alt="445202004-4a110408-5854-4e8c-b655-4cb588434b79" src="https://github.com/user-attachments/assets/094464d1-8ce8-474b-8473-4a14973cff47" />
 
-![alt text](src/images/DeepPhenoTree.png)
+<img width="960" height="540" alt="DeepPhenoTree" src="https://github.com/user-attachments/assets/ec26e2bf-5983-46aa-8f16-b01e2fdc84a9" />
+
 
 DeepPhenoTree is though as a tool to enable automatic detection of phenological stages associated with flowering, fruitlet, and fruit in harvest time from images using deep learning–based object detection models.
 
@@ -77,11 +78,11 @@ bbx = infer.predict_boxes(image)
 
 This plugin is a tool to perform targeted image inference on user-provided images. Users can run three specific detection tasks via dedicated buttons: flowering, fruitlet, and fruit detection. The plugin returns the coordinates of bounding boxes around detected objects, and a message informs the user of the number of detected boxes. Several developments are ongoing—feel free to contact us if you have requests or suggestions.
 
-![alt text](<src/images/Screenshot from 2026-01-09 16-38-04.png>)
+<img width="1854" height="1048" alt="Screenshot from 2026-01-09 16-38-04" src="https://github.com/user-attachments/assets/385c5867-ffd1-4de0-8bff-2af0ca1d052b" />
 
 ### Scheme
 
-![alt text](src/images/scheme.png)
+<img width="960" height="540" alt="scheme" src="https://github.com/user-attachments/assets/6a7827da-a982-405e-b411-3942b2585f4c" />
 
 ### Input
 
