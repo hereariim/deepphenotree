@@ -36,5 +36,3 @@ if __name__ == "__main__":
                 for chunk in r.iter_content(chunk_size=1024 * 1024):
                     if chunk:
                         f.write(chunk)
-
-        # print("OK:", out_path)
