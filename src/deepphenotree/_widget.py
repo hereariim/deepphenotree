@@ -32,7 +32,7 @@ Replace code below according to your needs.
 from typing import TYPE_CHECKING
 
 from napari.utils import notifications
-from qtpy.QtWidgets import QPushButton, QVBoxLayout, QWidget
+from qtpy.QtWidgets import QPushButton, QVBoxLayout, QWidget, QFileDialog
 
 from .inference import YoloInferencer
 
@@ -78,6 +78,7 @@ class ThreeButtonsWidget(QWidget):
         self.btn1 = QPushButton("Flowering")
         self.btn2 = QPushButton("Fruitlet")
         self.btn3 = QPushButton("Fruit")
+        self.btn4 = QPushButton("Export")
 
         self.btn1.clicked.connect(
             lambda: self._detect(self_model1, "Flowering")
@@ -86,12 +87,14 @@ class ThreeButtonsWidget(QWidget):
             lambda: self._detect(self_model2, "Fruitlet")
         )
         self.btn3.clicked.connect(lambda: self._detect(self_model3, "Fruit"))
+        self.btn4.clicked.connect(self._export_yolo)
 
         # Layout
         layout = QVBoxLayout()
         layout.addWidget(self.btn1)
         layout.addWidget(self.btn2)
         layout.addWidget(self.btn3)
+        layout.addWidget(self.btn4)
         self.setLayout(layout)
 
     def _detect(self, model: YoloInferencer, layer_name: str):
@@ -120,3 +123,56 @@ class ThreeButtonsWidget(QWidget):
         notifications.show_info(
             f"{len(rectangles)} objects detected in {layer_name}"
         )
+
+    def _export_yolo(self):
+        # 1️⃣ Vérifier layer image actif
+        image_layer = self.viewer.layers.selection.active
+        if image_layer is None or image_layer.__class__.__name__ != "Image":
+            notifications.show_info("Select an Image layer first")
+            return
+
+        img_height, img_width = image_layer.data.shape[:2]
+
+        # 2️⃣ Chercher un layer Shapes sélectionné
+        shape_layer = None
+        for layer in self.viewer.layers:
+            if layer.__class__.__name__ == "Shapes":
+                shape_layer = layer
+                break
+
+        if shape_layer is None or len(shape_layer.data) == 0:
+            notifications.show_info("No bounding boxes found")
+            return
+
+        # 3️⃣ Choisir fichier de sauvegarde
+        save_path, _ = QFileDialog.getSaveFileName(
+            self, "Save YOLO annotation", "", "Text Files (*.txt)"
+        )
+
+        if not save_path:
+            return
+
+        # 4️⃣ Conversion vers YOLO
+        yolo_boxes = []
+
+        for box in shape_layer.data:
+            ys = box[:, 0]
+            xs = box[:, 1]
+
+            x_min, x_max = xs.min(), xs.max()
+            y_min, y_max = ys.min(), ys.max()
+
+            x_center = ((x_min + x_max) / 2) / img_width
+            y_center = ((y_min + y_max) / 2) / img_height
+            width = (x_max - x_min) / img_width
+            height = (y_max - y_min) / img_height
+
+            class_id = 0  # ⚠️ à adapter si multi-classes
+            yolo_boxes.append([class_id, x_center, y_center, width, height])
+
+        # 5️⃣ Écriture fichier
+        with open(save_path, "w") as f:
+            for box in yolo_boxes:
+                f.write(" ".join(map(str, box)) + "\n")
+
+        notifications.show_info(f"{len(yolo_boxes)} boxes exported in YOLO format")

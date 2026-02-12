@@ -54,6 +54,14 @@ To install latest development version :
 ```
 pip install git+https://github.com/hereariim/deepphenotree.git
 ```
+
+GPU is mandatory for time processing and models running (especially Grounding-DINO). Please visit the official PyTorch website to get the appropriate installation command:
+👉 https://pytorch.org/get-started/locally
+
+**Exemple : GPU (CUDA 12.1)**
+
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
 ## Getting started
 
 ### Running from Python
