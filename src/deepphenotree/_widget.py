@@ -32,7 +32,13 @@ Replace code below according to your needs.
 from typing import TYPE_CHECKING
 
 from napari.utils import notifications
+<<<<<<< HEAD
 from qtpy.QtWidgets import QPushButton, QVBoxLayout, QWidget, QFileDialog
+=======
+from qtpy.QtWidgets import QPushButton, QVBoxLayout, QWidget, QLabel, QHBoxLayout
+from qtpy.QtGui import QPixmap
+from qtpy.QtCore import Qt
+>>>>>>> 345591f (logo)
 
 from .inference import YoloInferencer
 
@@ -74,6 +80,17 @@ class ThreeButtonsWidget(QWidget):
         self_model2 = YoloInferencer(task="Fruitlet")
         self_model3 = YoloInferencer(task="Fruit")
 
+
+        # 🔹 Titre texte
+        title = QLabel("🌸 Phenological Detection")
+        title.setAlignment(Qt.AlignCenter)
+        title.setStyleSheet(
+            "font-size: 14px; font-weight: bold; margin-bottom: 6px;"
+        )
+
+
+
+
         # 🔹 Trois boutons
         self.btn1 = QPushButton("Flowering")
         self.btn2 = QPushButton("Fruitlet")
@@ -96,6 +113,28 @@ class ThreeButtonsWidget(QWidget):
         layout.addWidget(self.btn3)
         layout.addWidget(self.btn4)
         self.setLayout(layout)
+
+       # 🔹 Logos
+        logo_layout = QHBoxLayout()
+        logo_UE = Path.home() / "deepphenotree" / "src" / "deepphenotree" / "EU_logo.png"
+        logo1 = QLabel()
+        pix1 = QPixmap(str(logo_UE)).scaled(
+            90, 90, Qt.KeepAspectRatio, Qt.SmoothTransformation
+        )
+        logo1.setPixmap(pix1)
+        logo_PHENET = Path.home() / "deepphenotree" / "src" / "deepphenotree" / "phenet.png"
+        logo2 = QLabel()
+        pix2 = QPixmap(str(logo_PHENET)).scaled(
+            40, 40, Qt.KeepAspectRatio, Qt.SmoothTransformation
+        )
+        logo2.setPixmap(pix2)
+
+        logo_layout.addStretch()
+        logo_layout.addWidget(logo1)
+        logo_layout.addSpacing(10)
+        logo_layout.addWidget(logo2)
+        logo_layout.addStretch()
+
 
     def _detect(self, model: YoloInferencer, layer_name: str):
         # 1️⃣ Récupérer le layer image actif
