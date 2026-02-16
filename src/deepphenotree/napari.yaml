@@ -18,7 +18,7 @@ contributions:
   readers:
     - command: deepphenotree.get_reader
       accepts_directories: true
-      filename_patterns: ['*']
+      filename_patterns: ['*.npy']
   sample_data:
     - key: fruit1
       display_name: Fruit switzerland
