@@ -17,12 +17,21 @@ contributions:
       title: Three Buttons Widget
   readers:
     - command: deepphenotree.get_reader
-      accepts_directories: false
-      filename_patterns: ['*.npy']
+      accepts_directories: true
+      filename_patterns: ['*']
   sample_data:
-    - command: deepphenotree.make_sample_data
-      display_name: DeepPhenoTree
-      key: unique_id.1
+    - key: fruit1
+      display_name: Fruit switzerland
+      uri: src/deepphenotree/sample_data/Fruit_switzerland.png
+    - key: fruit2
+      display_name: Fruit belgium
+      uri: src/deepphenotree/sample_data/Fruit_belgium.png
+    - key: fruit3
+      display_name: Fruit spain
+      uri: src/deepphenotree/sample_data/Fruit_spain.png
+    - key: fruit4
+      display_name: Fruit italy
+      uri: src/deepphenotree/sample_data/Fruit_italy.png
   widgets:
     - command: deepphenotree.three_widget
       display_name: DeepPhenoTree

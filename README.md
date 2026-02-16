@@ -9,13 +9,13 @@
 [![npe2](https://img.shields.io/badge/plugin-npe2-blue?link=https://napari.org/stable/plugins/index.html)](https://napari.org/stable/plugins/index.html)
 [![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-purple.json)](https://github.com/copier-org/copier)
 
-Abdoul djalil Ousseni hamza, Herearii Metuarea, Walter Guerra† ,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau† 
+Herearii Metuarea, Abdoul djalil Ousseni hamza, Walter Guerra† ,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau† 
 
 † project lead
 
-<img width="1920" height="165" alt="445202004-4a110408-5854-4e8c-b655-4cb588434b79" src="https://github.com/user-attachments/assets/094464d1-8ce8-474b-8473-4a14973cff47" />
+<img width="1920"  alt="445202004-4a110408-5854-4e8c-b655-4cb588434b79" src="https://github.com/user-attachments/assets/094464d1-8ce8-474b-8473-4a14973cff47" />
 
-<img width="960" height="540" alt="DeepPhenoTree" src="https://github.com/user-attachments/assets/ec26e2bf-5983-46aa-8f16-b01e2fdc84a9" />
+<img width="960" alt="DeepPhenoTree" src="https://github.com/user-attachments/assets/ec26e2bf-5983-46aa-8f16-b01e2fdc84a9" />
 
 
 DeepPhenoTree is though as a tool to enable automatic detection of phenological stages associated with flowering, fruitlet, and fruit in harvest time from images using deep learning–based object detection models.
@@ -27,7 +27,7 @@ This [napari] plugin was generated with [copier] using the [napari-plugin-templa
 ### Article (Draft)
 
 *DeepPhenoTree – Apple Edition: a Multi-site apple phenology RGB annotated dataset with deep learning baseline models.*
-Abdoul djalil Ousseni hamza, Herearii Metuarea, Walter Guerra,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau.
+Herearii Metuarea, Abdoul djalil Ousseni hamza, Walter Guerra,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau.
 
 ### Dataset
 
@@ -43,7 +43,7 @@ You can install `deepphenotree` via [pip]:
 pip install deepphenotree
 ```
 
-If napari is not already installed, you can install `deepphenotree` with napari and Qt via:
+If napari is not already installed, you can install `deepphenotree` with **napari** and **Qt** via:
 
 ```
 pip install "deepphenotree[all]"
@@ -55,7 +55,7 @@ To install latest development version :
 pip install git+https://github.com/hereariim/deepphenotree.git
 ```
 
-GPU is mandatory for time processing and models running (especially Grounding-DINO). Please visit the official PyTorch website to get the appropriate installation command:
+GPU is mandatory for time processing and models running (especially RT-DETR). Please visit the official PyTorch website to get the appropriate installation command:
 👉 https://pytorch.org/get-started/locally
 
 **Exemple : GPU (CUDA 12.1)**
@@ -86,11 +86,15 @@ bbx = infer.predict_boxes(image)
 
 This plugin is a tool to perform targeted image inference on user-provided images. Users can run three specific detection tasks via dedicated buttons: flowering, fruitlet, and fruit detection. The plugin returns the coordinates of bounding boxes around detected objects, and a message informs the user of the number of detected boxes. Several developments are ongoing—feel free to contact us if you have requests or suggestions.
 
-<img width="1854" height="1048" alt="Screenshot from 2026-01-09 16-38-04" src="https://github.com/user-attachments/assets/385c5867-ffd1-4de0-8bff-2af0ca1d052b" />
+<!-- <img width="1854" height="1048" alt="Screenshot from 2026-01-09 16-38-04" src="https://github.com/user-attachments/assets/385c5867-ffd1-4de0-8bff-2af0ca1d052b" /> -->
+
+<img width="960" src="src/images/Screenshot from 2026-02-16 15-21-37.png" />
+
 
 ### Scheme
 
-<img width="960" height="540" alt="scheme" src="https://github.com/user-attachments/assets/6a7827da-a982-405e-b411-3942b2585f4c" />
+<img width="960" alt="scheme" src="https://github.com/user-attachments/assets/6a7827da-a982-405e-b411-3942b2585f4c" />
+
 
 ### Input
 
@@ -140,7 +144,7 @@ DeepPhenoTree – Apple Edition, a multi-site, multi-variety,  RGB  image  datas
 
 ## Acknowlegments
 
-We would like to thank the following people for their contributions to the project: Herearii Metuarea, Lou Decastro, Jade Marhadour, Oumaima Karia, Lorène Masson, Marie Kourkoumelis-Rodostamos, Abdoul-Djalil Hamza Ousseinni, Walter Guerra, Francesca Zuffa, Francesco Panzeri,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau.
+We would like to thank the following people for their contributions to the project: Herearii Metuarea, Abdoul-Djalil Ousseini Hamza, Lou Decastro, Jade Marhadour, Oumaima Karia, Lorène Masson, Marie Kourkoumelis-Rodostamos, Abdoul-Djalil Hamza Ousseinni, Walter Guerra, Francesca Zuffa, Francesco Panzeri,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau.
 
 ## Contact
 
@@ -148,7 +152,7 @@ Imhorphen team, bioimaging research group
 42 rue George Morel, Angers, France
 
 - Herearii Metuarea, herearii.metuarea@univ-angers.fr
-- Abdoul-Djalil Hamza Ousseini, abdoul-djalil.ousseini-hamza@inrae.fr
+- Abdoul-Djalil Ousseini Hamza, abdoul-djalil.ousseini-hamza@inrae.fr
 - Pr David Rousseau, david.rousseau@univ-angers.fr
 
 ## Contributing

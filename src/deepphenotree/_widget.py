@@ -32,13 +32,9 @@ Replace code below according to your needs.
 from typing import TYPE_CHECKING
 
 from napari.utils import notifications
-<<<<<<< HEAD
-from qtpy.QtWidgets import QPushButton, QVBoxLayout, QWidget, QFileDialog
-=======
 from qtpy.QtWidgets import QPushButton, QVBoxLayout, QWidget, QLabel, QHBoxLayout
 from qtpy.QtGui import QPixmap
 from qtpy.QtCore import Qt
->>>>>>> 345591f (logo)
 
 from .inference import YoloInferencer
 

@@ -8,7 +8,6 @@ https://napari.org/stable/plugins/building_a_plugin/guides.html#readers
 
 import numpy as np
 
-
 def napari_get_reader(path):
     """A basic implementation of a Reader contribution.
 
