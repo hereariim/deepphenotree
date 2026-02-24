@@ -22,16 +22,43 @@ contributions:
   sample_data:
     - key: fruit1
       display_name: Fruit switzerland
-      uri: src/deepphenotree/sample_data/Fruit_switzerland.png
+      uri: deepphenotree/src/deepphenotree/sample_data/Fruit_switzerland.png
     - key: fruit2
       display_name: Fruit belgium
-      uri: src/deepphenotree/sample_data/Fruit_belgium.png
+      uri: deepphenotree/src/deepphenotree/sample_data/Fruit_belgium.png
     - key: fruit3
       display_name: Fruit spain
-      uri: src/deepphenotree/sample_data/Fruit_spain.png
+      uri: deepphenotree/src/deepphenotree/sample_data/Fruit_spain.png
     - key: fruit4
       display_name: Fruit italy
-      uri: src/deepphenotree/sample_data/Fruit_italy.png
+      uri: deepphenotree/src/deepphenotree/sample_data/Fruit_italy.png
+
+    - key: fruitlet1
+      display_name: Fruitlet switzerland
+      uri: deepphenotree/src/deepphenotree/sample_data/Fruitlet_switzerland.png
+    - key: fruitlet2
+      display_name: Fruitlet belgium
+      uri: deepphenotree/src/deepphenotree/sample_data/Fruitlet_belgium.png
+    - key: fruitlet3
+      display_name: Fruitlet spain
+      uri: deepphenotree/src/deepphenotree/sample_data/Fruitlet_spain.png
+    - key: fruitlet4
+      display_name: Fruitlet italy
+      uri: deepphenotree/src/deepphenotree/sample_data/Fruitlet_italy.png
+
+    - key: flowering1
+      display_name: Flowering switzerland
+      uri: deepphenotree/src/deepphenotree/sample_data/Flowering_switzerland.png
+    - key: flowering2
+      display_name: Flowering belgium
+      uri: deepphenotree/src/deepphenotree/sample_data/Flowering_belgium.png
+    - key: flowering3
+      display_name: Flowering spain
+      uri: deepphenotree/src/deepphenotree/sample_data/Flowering_spain.png
+    - key: flowering4
+      display_name: Flowering italy
+      uri: deepphenotree/src/deepphenotree/sample_data/Flowering_italy.png
+
   widgets:
     - command: deepphenotree.three_widget
       display_name: DeepPhenoTree

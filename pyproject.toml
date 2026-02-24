@@ -35,6 +35,7 @@ dependencies = [
     "scikit-image",
     "sahi==0.11.36",
     "ultralytics==8.3.214",
+    "opencv-python==4.13.0"
 ]
 
 [project.optional-dependencies]

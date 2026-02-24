@@ -9,13 +9,16 @@
 [![npe2](https://img.shields.io/badge/plugin-npe2-blue?link=https://napari.org/stable/plugins/index.html)](https://napari.org/stable/plugins/index.html)
 [![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-purple.json)](https://github.com/copier-org/copier)
 
-Herearii Metuarea, Abdoul djalil Ousseni hamza, Walter Guerra† ,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau† 
+
+Herearii Metuarea; Abdoul djalil Ousseni hamza; Lou Decastro; Jade Marhadour; Oumaima Karia; Lorène Masson; Marie Kourkoumelis-Rodostamos; Walter Guerra; Francesca Zuffa; Francesco Panzeri; Andrea Patocchi; Lidia Lozano; Shauny Van Hoye; Marijn Rymenants; François Laurens; Jeremy Labrosse; Pejman Rasti; David Rousseau
 
 † project lead
+° Student intern
+
 
 <img width="1920"  alt="445202004-4a110408-5854-4e8c-b655-4cb588434b79" src="https://github.com/user-attachments/assets/094464d1-8ce8-474b-8473-4a14973cff47" />
 
-<img width="960" alt="DeepPhenoTree" src="https://github.com/user-attachments/assets/ec26e2bf-5983-46aa-8f16-b01e2fdc84a9" />
+<img width="960" src="src/images/DeepPhenoTreeTools.png" />
 
 
 DeepPhenoTree is though as a tool to enable automatic detection of phenological stages associated with flowering, fruitlet, and fruit in harvest time from images using deep learning–based object detection models.
@@ -31,7 +34,7 @@ Herearii Metuarea, Abdoul djalil Ousseni hamza, Walter Guerra,  Andrea Patocchi,
 
 ### Dataset
 
-Herearii METUAREA, 2026, "DeepPhenoTree - Apple Edition", https://doi.org/10.57745/NORPF1, Recherche Data Gouv, V1
+Herearii Metuarea; Abdoul djalil Ousseni hamza; Lou Decastro; Jade Marhadour; Oumaima Karia; Lorène Masson; Marie Kourkoumelis-Rodostamos; Walter Guerra; Francesca Zuffa; Francesco Panzeri; Andrea Patocchi; Lidia Lozano; Shauny Van Hoye; Marijn Rymenants; François Laurens; Jeremy Labrosse; Pejman Rasti; David Rousseau, 2026, "DeepPhenoTree - Apple Edition", https://doi.org/10.57745/NORPF1, Recherche Data Gouv, V5, UNF:6:FyJNuJx4BVZxWuG8hI4gEw== [fileUNF]
 
 ----------------------------------
 
@@ -65,6 +68,27 @@ GPU is mandatory for time processing and models running (especially RT-DETR). Pl
 ## Getting started
 
 ### Running from Python
+
+#### 1. Load sample image
+
+
+
+```
+from deepphenotree._sample_data import DeepPhenoTreeData
+
+# Flowering data
+data_flower = DeepPhenoTreeData('Flowering')
+images = data_flower.data # Dimension : (5120, 5120, 3, 4)
+country = data_flower.names # ['Belgium', 'Italy', 'Spain', 'Switzerland']
+
+# Fruitlet data
+data_fruitlet = DeepPhenoTreeData('Fruitlet')
+# Fruit data
+data_fruit = DeepPhenoTreeData('Fruit')
+```
+
+#### 2. Run inference
+
 ```
 from deepphenotree.inference import YoloInferencer
 image = # Your RGB image
@@ -88,17 +112,21 @@ This plugin is a tool to perform targeted image inference on user-provided image
 
 <!-- <img width="1854" height="1048" alt="Screenshot from 2026-01-09 16-38-04" src="https://github.com/user-attachments/assets/385c5867-ffd1-4de0-8bff-2af0ca1d052b" /> -->
 
-<img width="960" src="src/images/Screenshot from 2026-02-16 15-21-37.png" />
+<img width="960" src="src/images/Deepphenotree_plugin.png" />
 
 
 ### Scheme
 
-<img width="960" alt="scheme" src="https://github.com/user-attachments/assets/6a7827da-a982-405e-b411-3942b2585f4c" />
+<img width="960" src="src/images/User_tool.png" />
 
 
 ### Input
 
-User drag and drop RGB image on napari window.
+User drag and drop RGB image on napari window. Otherwise, user can select an image among suggested images from the plugin :
+
+File > Open Sample > DeepPhenoTree > images
+
+Note : The images available in Open Sample > DeepPhenoTree correspond to the test data associated with the models provided in this plugin.
 
 ### Process
 
@@ -120,20 +148,26 @@ However, the codebase is provided to ensure **reproducibility** and **transparen
 
 ### Images results
 
-**Metrics are reported as mean ± standard deviation across folds.**
+**Standard deviation is computed over 5-fold cross-validation. Overall (4 sites) denotes the aggregated evaluation across the four experimental sites (Switzerland, Belgium, Spain, and Italy).**
 
-| Dataset   | Location      | Precision       | Recall          | mAP@0.5        | mAP@0.5:0.95   |
-|-----------|---------------|-----------------|-----------------|---------------|---------------|
-| Flowering | REFPOP        | 0.69 ± 0.01     | 0.58 ± 0.02     | 0.65 ± 0.02   | 0.37 ± 0.02   |
-|           | Switzerland   | 0.73 ± 0.02     | 0.60 ± 0.04     | 0.68 ± 0.03   | 0.40 ± 0.04   |
-|           | Belgium       | 0.72 ± 0.02     | 0.63 ± 0.03     | 0.69 ± 0.03   | 0.40 ± 0.03   |
-|           | Spain         | 0.66 ± 0.01     | 0.53 ± 0.05     | 0.60 ± 0.03   | 0.30 ± 0.02   |
-|           | Italy         | 0.69 ± 0.04     | 0.61 ± 0.03     | 0.67 ± 0.04   | 0.40 ± 0.04   |
-| Fruitlet  | REFPOP        | 0.85 ± 0.02     | 0.73 ± 0.02     | 0.82 ± 0.02   | 0.53 ± 0.01   |
-|           | Switzerland   | 0.86 ± 0.04     | 0.78 ± 0.04     | 0.84 ± 0.06   | 0.56 ± 0.04   |
-|           | Belgium       | 0.83 ± 0.03     | 0.65 ± 0.04     | 0.77 ± 0.04   | 0.52 ± 0.14   |
-|           | Spain         | 0.86 ± 0.02     | 0.72 ± 0.03     | 0.81 ± 0.03   | 0.52 ± 0.03   |
-|           | Italy         | 0.88 ± 0.01     | 0.80 ± 0.01     | 0.88 ± 0.01   | 0.61 ± 0.01   |
+| Dataset      | Location               | Precision        | Recall           | mAP@.5         | mAP@.5:.95     |
+| ------------ | ---------------------- | ---------------- | ---------------- | -------------- | -------------- |
+|              | Overall (4 sites)      | 0.69 ± 0.01      | 0.58 ± 0.02      | 0.65 ± 0.02    | 0.37 ± 0.02    |
+|              | Switzerland            | 0.73 ± 0.02      | 0.60 ± 0.04      | 0.68 ± 0.03    | 0.40 ± 0.04    |
+| Flowering    | Belgium                | 0.72 ± 0.02      | 0.63 ± 0.03      | 0.69 ± 0.03    | 0.40 ± 0.03    |
+|              | Spain                  | 0.66 ± 0.01      | 0.53 ± 0.05      | 0.60 ± 0.03    | 0.30 ± 0.02    |
+|              | Italy                  | 0.69 ± 0.04      | 0.61 ± 0.03      | 0.67 ± 0.04    | 0.40 ± 0.04    |
+|              | Overall (4 sites)      | 0.85 ± 0.02      | 0.73 ± 0.02      | 0.82 ± 0.02    | 0.53 ± 0.01    |
+|              | Switzerland            | 0.86 ± 0.04      | 0.78 ± 0.04      | 0.84 ± 0.06    | 0.56 ± 0.04    |
+| Fruitlet     | Belgium                | 0.83 ± 0.03      | 0.65 ± 0.04      | 0.77 ± 0.04    | 0.52 ± 0.14    |
+|              | Spain                  | 0.86 ± 0.02      | 0.72 ± 0.03      | 0.81 ± 0.03    | 0.52 ± 0.03    |
+|              | Italy                  | 0.88 ± 0.01      | 0.80 ± 0.01      | 0.88 ± 0.01    | 0.61 ± 0.01    |
+|              | Overall (4 sites)      | 0.87 ± 0.01      | 0.79 ± 0.01      | 0.86 ± 0.01    | 0.57 ± 0.01    |
+|              | Switzerland            | 0.86 ± 0.03      | 0.80 ± 0.02      | 0.87 ± 0.02    | 0.59 ± 0.01    |
+| Fruit        | Belgium                | 0.90 ± 0.01      | 0.84 ± 0.01      | 0.90 ± 0.01    | 0.63 ± 0.02    |
+|              | Spain                  | 0.86 ± 0.02      | 0.75 ± 0.02      | 0.84 ± 0.02    | 0.51 ± 0.03    |
+|              | Italy                  | 0.88 ± 0.02      | 0.84 ± 0.03      | 0.90 ± 0.02    | 0.66 ± 0.02    |
+
 
 ## DeepPhenoTree Dataset
 
@@ -144,7 +178,7 @@ DeepPhenoTree – Apple Edition, a multi-site, multi-variety,  RGB  image  datas
 
 ## Acknowlegments
 
-We would like to thank the following people for their contributions to the project: Herearii Metuarea, Abdoul-Djalil Ousseini Hamza, Lou Decastro, Jade Marhadour, Oumaima Karia, Lorène Masson, Marie Kourkoumelis-Rodostamos, Abdoul-Djalil Hamza Ousseinni, Walter Guerra, Francesca Zuffa, Francesco Panzeri,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau.
+This work was supported by the  [PHENET project](https://doi.org/10.3030/101094587). The authors also acknowledge IDRIS for providing access to high-performance computing resources.
 
 ## Contact
 
@@ -171,7 +205,7 @@ If you encounter any problems, please [file an issue] along with a detailed desc
 
 ## Citing
 
-If you use DeepPhenoTree code or dataset in your research, please use the following BibTeX entry.
+If you use DeepPhenoTree plugin in your research, please use the following BibTeX entry.
 
 ```
 Not available

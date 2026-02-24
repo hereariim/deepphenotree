@@ -1,13 +1,15 @@
 from pathlib import Path
 import requests
 import os
+import tempfile
+
 homedir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 if __name__ == "__main__":
 
     urls = [
             "https://laris-cloud.sien-pdl.fr/index.php/s/qg8ZCFE5gfNposz", #Flowering
-            "https://laris-cloud.sien-pdl.fr/index.php/s/SsGmtCGqecYb2qM", #Fruit 
+            "https://laris-cloud.sien-pdl.fr/index.php/s/FFEbyBJdyDPkJcy", #Fruit 
             "https://laris-cloud.sien-pdl.fr/index.php/s/NRrbznkW7z43Ge5", #Fruitlet
     ]
 
@@ -17,17 +19,24 @@ if __name__ == "__main__":
         "Fruitlet"
     ]
 
-    path = "models"
-    out_dir = Path(os.path.join(homedir,path))
-    out_dir.mkdir(parents=True, exist_ok=True)
+    temp_root = Path(tempfile.gettempdir()) / "deepphenotree_models"
+    temp_root.mkdir(parents=True, exist_ok=True)
+
+    # path = "models"
+    # out_dir = Path(os.path.join(homedir,path))
+    # out_dir.mkdir(parents=True, exist_ok=True)
 
     for share_url,folder in zip(urls,folders):
         download_url = share_url.rstrip("/") + "/download"
 
-        out_dir = Path(os.path.join(homedir,path,folder.replace('.pt','')))
-        out_dir.mkdir(parents=True, exist_ok=True)
+        # out_dir = Path(os.path.join(homedir,path,folder.replace('.pt','')))
+        # out_dir.mkdir(parents=True, exist_ok=True)
+        # out_path = homedir / out_dir / "best.pt"
 
-        out_path = homedir / out_dir / "best.pt"
+        model_dir = temp_root / folder.replace('.pt','')
+        model_dir.mkdir(parents=True, exist_ok=True)
+        out_path = model_dir / "best.pt"
+        
         if not out_path.exists():
             with requests.get(download_url, stream=True, timeout=60) as r:
                 r.raise_for_status()

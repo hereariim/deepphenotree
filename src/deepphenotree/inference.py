@@ -1,3 +1,5 @@
+import tempfile
+
 import numpy as np
 from ultralytics import RTDETR, YOLO
 from sahi.models.ultralytics import UltralyticsDetectionModel
@@ -5,9 +7,16 @@ from sahi.predict import get_sliced_prediction
 import torch
 from pathlib import Path
 
-MODEL_Flowering = Path.home() / "deepphenotree" / "src" / "models" / "Flowering" / "best.pt"
-MODEL_Fruitlet = Path.home() / "deepphenotree" / "src" / "models" / "Fruitlet" / "best.pt"
-MODEL_Fruit = Path.home() / "deepphenotree" / "src" / "models" / "Fruit" / "best.pt"
+temp_root = Path(tempfile.gettempdir()) / "deepphenotree_models"
+
+
+MODEL_Flowering = temp_root / "Flowering" / "best.pt"
+MODEL_Fruitlet = temp_root / "Fruitlet" / "best.pt"
+MODEL_Fruit = temp_root / "Fruit" / "best.pt"
+
+# MODEL_Flowering = Path.home() / "deepphenotree" / "src" / "models" / "Flowering" / "best.pt"
+# MODEL_Fruitlet = Path.home() / "deepphenotree" / "src" / "models" / "Fruitlet" / "best.pt"
+# MODEL_Fruit = Path.home() / "deepphenotree" / "src" / "models" / "Fruit" / "best.pt"
 
 class YoloInferencer:
     def __init__(self, task: str):

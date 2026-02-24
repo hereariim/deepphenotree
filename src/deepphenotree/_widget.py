@@ -32,7 +32,7 @@ Replace code below according to your needs.
 from typing import TYPE_CHECKING
 
 from napari.utils import notifications
-from qtpy.QtWidgets import QPushButton, QVBoxLayout, QWidget, QLabel, QHBoxLayout
+from qtpy.QtWidgets import QPushButton, QVBoxLayout, QWidget, QLabel, QHBoxLayout, QFileDialog
 from qtpy.QtGui import QPixmap
 from qtpy.QtCore import Qt
 
@@ -78,14 +78,43 @@ class ThreeButtonsWidget(QWidget):
 
 
         # 🔹 Titre texte
-        title = QLabel("🌸 Phenological Detection")
+        title = QLabel("DeepPhenoTree")
         title.setAlignment(Qt.AlignCenter)
         title.setStyleSheet(
             "font-size: 14px; font-weight: bold; margin-bottom: 6px;"
         )
 
+        description = QLabel(
+            "<b>Step 1:</b><br>"
+            "Select a color image, then click:<br><br>"
+            "• Flowering → detect item<br>"
+            "with BBCH 00-69<br>"
+            "• Fruitlet → detect item<br>"
+            "with BBCH 71-77<br>"
+            "• Fruit → detect item<br>"
+            "with BBCH 81-89<br><br>"
+            "<b>Step 2:</b><br>"
+            "Select the image where<br>"
+            "you have detected objects,<br>"
+            "then click:<br><br>"
+            "Export button to save<br>" 
+            "bounding box coordinates<br>"
+            "in YOLO format.<br>"
+        )
 
-
+        description.setAlignment(Qt.AlignLeft)
+        description.setWordWrap(True)
+        description.setTextFormat(Qt.RichText)  # ✅ important pour forcer HTML
+        description.setStyleSheet("""
+            QLabel {
+                font-size: 12px;
+                color: white;
+                background-color: #2C3E50;
+                border-radius: 6px;
+                padding: 8px;
+                margin-bottom: 8px;
+            }
+        """)
 
         # 🔹 Trois boutons
         self.btn1 = QPushButton("Flowering")
@@ -104,24 +133,44 @@ class ThreeButtonsWidget(QWidget):
 
         # Layout
         layout = QVBoxLayout()
+        layout.addWidget(title) 
+        layout.addWidget(description)
         layout.addWidget(self.btn1)
         layout.addWidget(self.btn2)
         layout.addWidget(self.btn3)
         layout.addWidget(self.btn4)
         self.setLayout(layout)
 
+        # 🔹 Funding text
+        funding_label = QLabel(
+            "This plugin has received funding from the European Union."
+        )
+        funding_label.setAlignment(Qt.AlignCenter)
+        funding_label.setWordWrap(True)
+        funding_label.setStyleSheet("""
+            QLabel {
+                font-size: 10px;
+                color: white;
+                margin-top: 10px;
+                margin-bottom: 4px;
+                background-color: #2C3E50;
+                border-radius: 6px;
+                padding: 8px;
+            }
+        """)
+
        # 🔹 Logos
         logo_layout = QHBoxLayout()
-        logo_UE = Path.home() / "deepphenotree" / "src" / "deepphenotree" / "EU_logo.png"
+        logo_UE = Path(__file__).parent / "EU_logo.png"
         logo1 = QLabel()
         pix1 = QPixmap(str(logo_UE)).scaled(
             90, 90, Qt.KeepAspectRatio, Qt.SmoothTransformation
         )
         logo1.setPixmap(pix1)
-        logo_PHENET = Path.home() / "deepphenotree" / "src" / "deepphenotree" / "phenet.png"
+        logo_PHENET = Path(__file__).parent / "phenet.png"
         logo2 = QLabel()
         pix2 = QPixmap(str(logo_PHENET)).scaled(
-            40, 40, Qt.KeepAspectRatio, Qt.SmoothTransformation
+            90, 90, Qt.KeepAspectRatio, Qt.SmoothTransformation
         )
         logo2.setPixmap(pix2)
 
@@ -130,6 +179,8 @@ class ThreeButtonsWidget(QWidget):
         logo_layout.addSpacing(10)
         logo_layout.addWidget(logo2)
         logo_layout.addStretch()
+        layout.addWidget(funding_label)
+        layout.addLayout(logo_layout)
 
 
     def _detect(self, model: YoloInferencer, layer_name: str):
