@@ -10,11 +10,9 @@
 [![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-purple.json)](https://github.com/copier-org/copier)
 
 
-Herearii Metuarea; Abdoul djalil Ousseni hamza; Lou Decastro; Jade Marhadour; Oumaima Karia; Lorène Masson; Marie Kourkoumelis-Rodostamos; Walter Guerra; Francesca Zuffa; Francesco Panzeri; Andrea Patocchi; Lidia Lozano; Shauny Van Hoye; Marijn Rymenants; François Laurens; Jeremy Labrosse; Pejman Rasti; David Rousseau
+Herearii Metuarea, Abdoul djalil Ousseni hamza, Walter Guerra†,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau†.
 
 † project lead
-° Student intern
-
 
 <img width="1920"  alt="445202004-4a110408-5854-4e8c-b655-4cb588434b79" src="https://github.com/user-attachments/assets/094464d1-8ce8-474b-8473-4a14973cff47" />
 
