@@ -16,7 +16,7 @@ Herearii Metuarea, Abdoul djalil Ousseni hamza, Walter Guerra†,  Andrea Patocc
 
 <img width="1920"  alt="445202004-4a110408-5854-4e8c-b655-4cb588434b79" src="https://github.com/user-attachments/assets/094464d1-8ce8-474b-8473-4a14973cff47" />
 
-<img width="1920" height="1080" alt="DeepPhenoTreeTools" src="https://github.com/user-attachments/assets/03c19ce6-1cf7-42e4-80b5-a9ade8fe9ebf" />
+<img width="1920" alt="DeepPhenoTreeTools" src="https://github.com/user-attachments/assets/03c19ce6-1cf7-42e4-80b5-a9ade8fe9ebf" />
 
 DeepPhenoTree is though as a tool to enable automatic detection of phenological stages associated with flowering, fruitlet, and fruit in harvest time from images using deep learning–based object detection models.
 
@@ -107,11 +107,11 @@ This plugin is a tool to perform targeted image inference on user-provided image
 
 <!-- <img width="1854" height="1048" alt="Screenshot from 2026-01-09 16-38-04" src="https://github.com/user-attachments/assets/385c5867-ffd1-4de0-8bff-2af0ca1d052b" /> -->
 
-<img width="1854" height="1011" alt="Deepphenotree_plugin" src="https://github.com/user-attachments/assets/8b03f625-f4e9-458d-b9d5-35f75fceb1eb" />
+<img width="1854" alt="Deepphenotree_plugin" src="https://github.com/user-attachments/assets/8b03f625-f4e9-458d-b9d5-35f75fceb1eb" />
 
 ### Scheme
 
-<img width="1920" height="1080" alt="User_tool" src="https://github.com/user-attachments/assets/2b1e9bc6-ca87-4315-83a4-7c1c5d4aff6a" />
+<img width="1920" alt="User_tool" src="https://github.com/user-attachments/assets/2b1e9bc6-ca87-4315-83a4-7c1c5d4aff6a" />
 
 ### Input
 
@@ -168,7 +168,7 @@ However, the codebase is provided to ensure **reproducibility** and **transparen
 
 DeepPhenoTree – Apple Edition, a multi-site, multi-variety,  RGB  image  dataset  dedicated  to  the  classification  of  key  apple  treephenological stages.
 
-<img width="1920" height="1080" alt="IRTA_time" src="https://github.com/user-attachments/assets/a05aedc7-2ad2-40cc-86d3-b3b94c6caa74" />
+<img width="1920" alt="IRTA_time" src="https://github.com/user-attachments/assets/a05aedc7-2ad2-40cc-86d3-b3b94c6caa74" />
 
 ## Acknowlegments
 
