@@ -16,8 +16,7 @@ Herearii Metuarea, Abdoul djalil Ousseni hamza, Walter Guerra†,  Andrea Patocc
 
 <img width="1920"  alt="445202004-4a110408-5854-4e8c-b655-4cb588434b79" src="https://github.com/user-attachments/assets/094464d1-8ce8-474b-8473-4a14973cff47" />
 
-<img width="960" src="src/images/DeepPhenoTreeTools.png" />
-
+<img width="1920" height="1080" alt="DeepPhenoTreeTools" src="https://github.com/user-attachments/assets/03c19ce6-1cf7-42e4-80b5-a9ade8fe9ebf" />
 
 DeepPhenoTree is though as a tool to enable automatic detection of phenological stages associated with flowering, fruitlet, and fruit in harvest time from images using deep learning–based object detection models.
 
@@ -69,8 +68,6 @@ GPU is mandatory for time processing and models running (especially RT-DETR). Pl
 
 #### 1. Load sample image
 
-
-
 ```
 from deepphenotree._sample_data import DeepPhenoTreeData
 
@@ -110,13 +107,11 @@ This plugin is a tool to perform targeted image inference on user-provided image
 
 <!-- <img width="1854" height="1048" alt="Screenshot from 2026-01-09 16-38-04" src="https://github.com/user-attachments/assets/385c5867-ffd1-4de0-8bff-2af0ca1d052b" /> -->
 
-<img width="960" src="src/images/Deepphenotree_plugin.png" />
-
+<img width="1854" height="1011" alt="Deepphenotree_plugin" src="https://github.com/user-attachments/assets/8b03f625-f4e9-458d-b9d5-35f75fceb1eb" />
 
 ### Scheme
 
-<img width="960" src="src/images/User_tool.png" />
-
+<img width="1920" height="1080" alt="User_tool" src="https://github.com/user-attachments/assets/2b1e9bc6-ca87-4315-83a4-7c1c5d4aff6a" />
 
 ### Input
 
@@ -155,11 +150,13 @@ However, the codebase is provided to ensure **reproducibility** and **transparen
 | Flowering    | Belgium                | 0.72 ± 0.02      | 0.63 ± 0.03      | 0.69 ± 0.03    | 0.40 ± 0.03    |
 |              | Spain                  | 0.66 ± 0.01      | 0.53 ± 0.05      | 0.60 ± 0.03    | 0.30 ± 0.02    |
 |              | Italy                  | 0.69 ± 0.04      | 0.61 ± 0.03      | 0.67 ± 0.04    | 0.40 ± 0.04    |
+| ------------ | ---------------------- | ---------------- | ---------------- | -------------- | -------------- |
 |              | Overall (4 sites)      | 0.85 ± 0.02      | 0.73 ± 0.02      | 0.82 ± 0.02    | 0.53 ± 0.01    |
 |              | Switzerland            | 0.86 ± 0.04      | 0.78 ± 0.04      | 0.84 ± 0.06    | 0.56 ± 0.04    |
 | Fruitlet     | Belgium                | 0.83 ± 0.03      | 0.65 ± 0.04      | 0.77 ± 0.04    | 0.52 ± 0.14    |
 |              | Spain                  | 0.86 ± 0.02      | 0.72 ± 0.03      | 0.81 ± 0.03    | 0.52 ± 0.03    |
 |              | Italy                  | 0.88 ± 0.01      | 0.80 ± 0.01      | 0.88 ± 0.01    | 0.61 ± 0.01    |
+| ------------ | ---------------------- | ---------------- | ---------------- | -------------- | -------------- |
 |              | Overall (4 sites)      | 0.87 ± 0.01      | 0.79 ± 0.01      | 0.86 ± 0.01    | 0.57 ± 0.01    |
 |              | Switzerland            | 0.86 ± 0.03      | 0.80 ± 0.02      | 0.87 ± 0.02    | 0.59 ± 0.01    |
 | Fruit        | Belgium                | 0.90 ± 0.01      | 0.84 ± 0.01      | 0.90 ± 0.01    | 0.63 ± 0.02    |
@@ -171,8 +168,7 @@ However, the codebase is provided to ensure **reproducibility** and **transparen
 
 DeepPhenoTree – Apple Edition, a multi-site, multi-variety,  RGB  image  dataset  dedicated  to  the  classification  of  key  apple  treephenological stages.
 
-<img width="1920" height="1080" alt="IRTA_time" src="https://github.com/user-attachments/assets/9eae80e6-73e1-45ad-b5e5-70a41807301b" />
-
+<img width="1920" height="1080" alt="IRTA_time" src="https://github.com/user-attachments/assets/a05aedc7-2ad2-40cc-86d3-b3b94c6caa74" />
 
 ## Acknowlegments
 
