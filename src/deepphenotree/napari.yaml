@@ -15,6 +15,47 @@ contributions:
     - id: deepphenotree.three_widget
       python_name: deepphenotree:ThreeButtonsWidget
       title: Three Buttons Widget
+
+    - id: deepphenotree.load_fruit_switzerland
+      python_name: deepphenotree._sample_data:load_fruit_switzerland
+      title: Load Fruit Switzerland
+    - id: deepphenotree.load_fruit_belgium
+      python_name: deepphenotree._sample_data:load_fruit_belgium
+      title: Load Fruit Belgium
+    - id: deepphenotree.load_fruit_spain
+      python_name: deepphenotree._sample_data:load_fruit_spain
+      title: Load Fruit Spain
+    - id: deepphenotree.load_fruit_italy
+      python_name: deepphenotree._sample_data:load_fruit_italy
+      title: Load Fruit Italy
+
+    - id: deepphenotree.load_fruitlet_switzerland
+      python_name: deepphenotree._sample_data:load_fruitlet_switzerland
+      title: Load Fruitlet Switzerland
+    - id: deepphenotree.load_fruitlet_belgium
+      python_name: deepphenotree._sample_data:load_fruitlet_belgium
+      title: Load Fruitlet Belgium
+    - id: deepphenotree.load_fruitlet_spain
+      python_name: deepphenotree._sample_data:load_fruitlet_spain
+      title: Load Fruitlet Spain
+    - id: deepphenotree.load_fruitlet_italy
+      python_name: deepphenotree._sample_data:load_fruitlet_italy
+      title: Load Fruitlet Italy
+
+    - id: deepphenotree.load_flowering_switzerland
+      python_name: deepphenotree._sample_data:load_flowering_switzerland
+      title: Load Flowering Switzerland
+    - id: deepphenotree.load_flowering_belgium
+      python_name: deepphenotree._sample_data:load_flowering_belgium
+      title: Load Flowering Belgium
+    - id: deepphenotree.load_flowering_spain
+      python_name: deepphenotree._sample_data:load_flowering_spain
+      title: Load Flowering Spain
+    - id: deepphenotree.load_flowering_italy
+      python_name: deepphenotree._sample_data:load_flowering_italy
+      title: Load Flowering Italy
+
+
   readers:
     - command: deepphenotree.get_reader
       accepts_directories: true
@@ -22,42 +63,42 @@ contributions:
   sample_data:
     - key: fruit1
       display_name: Fruit switzerland
-      uri: deepphenotree/src/deepphenotree/sample_data/Fruit_switzerland.png
+      command: deepphenotree.load_fruit_switzerland
     - key: fruit2
       display_name: Fruit belgium
-      uri: deepphenotree/src/deepphenotree/sample_data/Fruit_belgium.png
+      command: deepphenotree.load_fruit_belgium
     - key: fruit3
       display_name: Fruit spain
-      uri: deepphenotree/src/deepphenotree/sample_data/Fruit_spain.png
+      command: deepphenotree.load_fruit_spain
     - key: fruit4
       display_name: Fruit italy
-      uri: deepphenotree/src/deepphenotree/sample_data/Fruit_italy.png
+      command: deepphenotree.load_fruit_italy
 
     - key: fruitlet1
       display_name: Fruitlet switzerland
-      uri: deepphenotree/src/deepphenotree/sample_data/Fruitlet_switzerland.png
+      command: deepphenotree.load_fruitlet_switzerland
     - key: fruitlet2
       display_name: Fruitlet belgium
-      uri: deepphenotree/src/deepphenotree/sample_data/Fruitlet_belgium.png
+      command: deepphenotree.load_fruitlet_belgium
     - key: fruitlet3
       display_name: Fruitlet spain
-      uri: deepphenotree/src/deepphenotree/sample_data/Fruitlet_spain.png
+      command: deepphenotree.load_fruitlet_spain
     - key: fruitlet4
       display_name: Fruitlet italy
-      uri: deepphenotree/src/deepphenotree/sample_data/Fruitlet_italy.png
+      command: deepphenotree.load_fruitlet_italy
 
     - key: flowering1
       display_name: Flowering switzerland
-      uri: deepphenotree/src/deepphenotree/sample_data/Flowering_switzerland.png
+      command: deepphenotree.load_flowering_switzerland
     - key: flowering2
       display_name: Flowering belgium
-      uri: deepphenotree/src/deepphenotree/sample_data/Flowering_belgium.png
+      command: deepphenotree.load_flowering_belgium
     - key: flowering3
       display_name: Flowering spain
-      uri: deepphenotree/src/deepphenotree/sample_data/Flowering_spain.png
+      command: deepphenotree.load_flowering_spain
     - key: flowering4
       display_name: Flowering italy
-      uri: deepphenotree/src/deepphenotree/sample_data/Flowering_italy.png
+      command: deepphenotree.load_flowering_italy
 
   widgets:
     - command: deepphenotree.three_widget

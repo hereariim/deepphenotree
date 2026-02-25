@@ -92,3 +92,40 @@ class DeepPhenoTreeData:
 
         data = np.stack(padded_images, axis=-1)  # (H, W, N)
         return data,localisation
+
+from importlib import resources
+import cv2
+
+def _load_image(name, display_name):
+    image_path = resources.files("deepphenotree.sample_data").joinpath(name)
+    image = cv2.imread(image_path)
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    return [(image, {"name": display_name})]
+
+
+def load_fruit_switzerland():
+    return _load_image("Fruit_switzerland.png", "Fruit Switzerland")
+def load_fruit_belgium():
+    return _load_image("Fruit_belgium.png", "Fruit Belgium")
+def load_fruit_spain():
+    return _load_image("Fruit_spain.png", "Fruit Spain")
+def load_fruit_italy():
+    return _load_image("Fruit_italy.png", "Fruit Italy")
+
+def load_fruitlet_switzerland():
+    return _load_image("Fruitlet_switzerland.png", "Fruitlet Switzerland")
+def load_fruitlet_belgium():
+    return _load_image("Fruitlet_belgium.png", "Fruitlet Belgium")
+def load_fruitlet_spain():
+    return _load_image("Fruitlet_spain.png", "Fruitlet Spain")
+def load_fruitlet_italy():
+    return _load_image("Fruitlet_italy.png", "Fruitlet Italy")
+
+def load_flowering_switzerland():
+    return _load_image("Flowering_switzerland.png", "Flowering Switzerland")
+def load_flowering_belgium():
+    return _load_image("Flowering_belgium.png", "Flowering Belgium")
+def load_flowering_spain():
+    return _load_image("Flowering_spain.png", "Flowering Spain")
+def load_flowering_italy():
+    return _load_image("Flowering_italy.png", "Flowering Italy")

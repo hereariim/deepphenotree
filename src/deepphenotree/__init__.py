@@ -10,6 +10,8 @@ from ._widget import (
     ThreeButtonsWidget,
 )
 from .inference import YoloInferencer
+from .data_manager import ensure_data
+
 
 __all__ = (
     "napari_get_reader",
@@ -17,3 +19,8 @@ __all__ = (
     "ThreeButtonsWidget",
     "YoloInferencer",
 )
+
+from pathlib import Path
+package_dir = Path(__file__).resolve().parent
+if not (package_dir / "sample_data").exists():
+    ensure_data()
