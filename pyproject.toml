@@ -35,7 +35,7 @@ dependencies = [
     "scikit-image",
     "sahi==0.11.36",
     "ultralytics==8.3.214",
-    "opencv-python==4.13.0",
+    "opencv-python>=4.10,<5",
     "torch>=2.2",
     "torchvision>=0.17"
 ]
