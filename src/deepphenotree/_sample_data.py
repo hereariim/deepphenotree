@@ -98,7 +98,7 @@ import cv2
 
 def _load_image(name, display_name):
     image_path = resources.files("deepphenotree.sample_data").joinpath(name)
-    image = cv2.imread(image_path)
+    image = cv2.imread(str(image_path))
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     return [(image, {"name": display_name})]
 
