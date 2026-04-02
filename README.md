@@ -14,7 +14,7 @@ Herearii Metuarea, Abdoul djalil Ousseni hamza, Walter Guerra†,  Andrea Patocc
 
 † project lead
 
-<img width="1920"  alt="445202004-4a110408-5854-4e8c-b655-4cb588434b79" src="https://github.com/user-attachments/assets/094464d1-8ce8-474b-8473-4a14973cff47" />
+<img width="1920" alt="Capture d&#39;écran 2026-04-02 120703" src="https://github.com/user-attachments/assets/5794772e-fcf0-40fd-a8af-372f327f8a4d" />
 
 <img width="1920" alt="DeepPhenoTreeTools" src="https://github.com/user-attachments/assets/03c19ce6-1cf7-42e4-80b5-a9ade8fe9ebf" />
 
