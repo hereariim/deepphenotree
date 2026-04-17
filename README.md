@@ -10,7 +10,7 @@
 [![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-purple.json)](https://github.com/copier-org/copier)
 
 
-Herearii Metuarea, Abdoul djalil Ousseni hamza, Walter Guerra†,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau†.
+Herearii Metuarea, Abdoul-Djalil Ousseini Hamza, Walter Guerra†,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau†.
 
 † project lead
 
@@ -24,7 +24,7 @@ This [napari] plugin was generated with [copier] using the [napari-plugin-templa
 
 ### Contribution
 
-### Article (Draft)
+### Article (under review)
 
 *DeepPhenoTree – Apple Edition: a Multi-site apple phenology RGB annotated dataset with deep learning baseline models.*
 Herearii Metuarea, Abdoul djalil Ousseni hamza, Walter Guerra,  Andrea Patocchi, Lidia Lozano,  Shauny Van Hoye,  Francois Laurens, Jeremy Labrosse,  Pejman Rasti,  David Rousseau.
@@ -172,7 +172,13 @@ DeepPhenoTree – Apple Edition, a multi-site, multi-variety,  RGB  image  datas
 
 ## Acknowlegments
 
-This work was supported by the  [PHENET project](https://doi.org/10.3030/101094587). The authors also acknowledge IDRIS for providing access to high-performance computing resources.
+This work is led by IRHS, Université d'Angers, INRAe, Institut Agro. It is supported by :
+
+- The European Union’s Horizon Europe research innovation programme under grant agreement No 101094587 ([PHENET project](https://doi.org/10.3030/101094587))
+- The French National Research Agency (ANR) as part of the Programme d'Investissements d'Avenir under grant agreement ANR-11-INBS-0012 ([PHENOME-EMPHASIS](https://anr.fr/ProjetIA-11-INBS-0012))
+- The French National Research Agency (ANR) as part of the France 2030 investment plan under grant agreement ANR-22-PEAE-0012 ([AGROECOPHEN](https://anr.fr/ProjetIA-22-PEAE-0012))
+- The HPC resources of IDRIS under the allocation 2024-AD010115553 made by GENCI.
+
 
 ## Contact
 
@@ -199,11 +205,29 @@ If you encounter any problems, please [file an issue] along with a detailed desc
 
 ## Citing
 
-If you use DeepPhenoTree plugin in your research, please use the following BibTeX entry.
+If you use DeepPhenoTree in your research, please use the following BibTeX entry.
 
 ```
-Not available
+@article{metuarea2026deepphenotree,
+  title={DeepPhenoTree--Apple Edition: a Multi-site apple phenology RGB annotated dataset with deep learning baseline models},
+  author={Herearii Metuarea and Abdoul-Djalil Ousseini Hamza and Walter Guerra and Francesca Zuffa and Francesco Panzeri and Andrea Patocchi and Lidia Lozano and Shauny Van Hoye and François Laurens and Jeremy Labrosse and Pejman Rasti and David Rousseau},
+  year={2026}
+}
 ```
+
+If you use DeepPhenoTree dataset in your research, please use the following BibTeX entry.
+
+```
+@dataset{metuarea2026deepphenotree_dataset,
+  author = {Metuarea Herearii and Abdoul-Djalil Ousseini Hamza and Decastro Lou and Marhadour Jade and Karia Oumaima and Masson Lorène and Kourkoumelis-Rodostamos Marie and Guerra Walter and Zuffa Francesca and Panzeri Francesco and Patocchi Andrea and Lozano Lidia and Van Hoye Shauny and Rymenants Marijn and Laurens François and Labrosse Jeremy and Rasti Pejman and Rousseau David},
+  title = {DeepPhenoTree – Apple Edition},
+  year = {2026},
+  version = {5},
+  publisher = {Recherche Data Gouv},
+  doi = {10.57745/NORPF1}
+}
+```
+
 
 [napari]: https://github.com/napari/napari
 [copier]: https://copier.readthedocs.io/en/stable/

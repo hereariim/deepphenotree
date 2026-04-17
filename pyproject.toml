@@ -5,7 +5,7 @@ description = "A simple plugin to use models developped for flowering, fruitlet 
 readme = "README.md"
 license = {file = "LICENSE"}
 authors = [
-  {name = "Herearii Metuareea"},
+  {name = "Herearii Metuarea", "Abdoul djalil Ousseini Hamza", "Walter Guerra",  "Andrea Patocchi", "Lidia Lozano", "Shauny Van Hoye", "Francois Laurens", "Jeremy Labrosse", "Pejman Rasti", "David Rousseau"},
   {email = "herearii.metuarea@gmail.com"},
 ]
 classifiers = [
